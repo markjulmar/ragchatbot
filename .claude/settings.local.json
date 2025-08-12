@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill:*)",
+      "Bash(./run.sh)",
+      "Bash(chmod:*)",
+      "Bash(lsof:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "Bash(python3:*)",
+      "Bash(rm:*)"
+    ],
+    "deny": []
+  }
+}

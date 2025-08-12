@@ -1,0 +1,1 @@
+- Don't run the server using ./run.sh, I will run it myself separately
