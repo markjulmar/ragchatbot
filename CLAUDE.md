@@ -6,11 +6,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Environment Setup
 ```bash
-# Install dependencies
-uv sync
+# Install dependencies (including dev tools)
+uv sync --group dev
 
 # Create environment file (required)
 echo "ANTHROPIC_API_KEY=your_key_here" > .env
+
+# Install pre-commit hooks (recommended)
+uv run pre-commit install
+```
+
+### Code Quality Tools
+```bash
+# Format code (Black + isort)
+./scripts/format.sh
+
+# Run linters (flake8 + mypy)
+./scripts/lint.sh
+
+# Run tests
+./scripts/test.sh
+
+# Run all quality checks
+./scripts/quality.sh
+
+# Manual commands
+uv run black backend/ main.py          # Format code
+uv run isort backend/ main.py          # Sort imports  
+uv run flake8 backend/ main.py         # Lint code
+uv run mypy backend/ main.py           # Type check
+uv run pytest backend/tests/ -v       # Run tests
 ```
 
 ### Running the Application
