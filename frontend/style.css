@@ -60,7 +60,7 @@ body {
     padding: 0;
 }
 
-/* Container - Full Screen */
+/* Container - Full Screen with header offset */
 .container {
     height: 100vh;
     width: 100vw;
@@ -68,21 +68,33 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
+    padding-top: 120px; /* Space for fixed header */
 }
 
-/* Header - Hidden */
+/* Header - Fixed to top */
 header {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    text-align: center;
 }
 
 header h1 {
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
+    color: var(--text-primary);
 }
 
 .subtitle {
@@ -773,7 +785,11 @@ details[open] .suggested-header::before {
     }
     
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+    }
+    
+    .container {
+        padding-top: 90px; /* Reduced header space for mobile */
     }
     
     .chat-messages {
@@ -818,8 +834,8 @@ details[open] .suggested-header::before {
 /* Theme Toggle Button */
 .theme-toggle {
     position: fixed;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 2rem;
     z-index: 1000;
     width: 48px;
     height: 48px;
@@ -883,8 +899,8 @@ details[open] .suggested-header::before {
 /* Responsive adjustments for theme toggle */
 @media (max-width: 768px) {
     .theme-toggle {
-        top: 0.75rem;
-        right: 0.75rem;
+        top: 1rem;
+        right: 1rem;
         width: 44px;
         height: 44px;
         font-size: 1.1rem;
