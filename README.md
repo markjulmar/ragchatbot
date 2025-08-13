@@ -1,6 +1,6 @@
 # Course Materials RAG System
 
-A Retrieval-Augmented Generation (RAG) system designed to answer questions about course materials using semantic search and AI-powered responses.
+A Retrieval-Augmented Generation (RAG) system designed to answer questions about course materials using semantic search and AI-powered responses. This is a fork of an existing project which has been disconnected to allow future modifications that do not affect the original version.
 
 ## Overview
 
